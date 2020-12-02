@@ -8,8 +8,8 @@ function solve(caseLines) {
   let q1Total = 0;
   caseLines.forEach((d) => {
     const [range, indicator, text] = d.split(" ");
-    const [l, r] = range.split('-').map(Number);
-    let matchSum = text.split('').filter(c => c === indicator[0]).length;
+    const [l, r] = range.split("-").map(Number);
+    let matchSum = text.split("").filter((c) => c === indicator[0]).length;
     q1Total += matchSum >= l && matchSum <= r;
   });
   console.log(q1Total);
@@ -18,11 +18,11 @@ function solve(caseLines) {
   let q2Total = 0;
   caseLines.forEach((d) => {
     const [range, indicator, text] = d.split(" ");
-    const [l, r] = range.split('-').map(Number);
+    const [l, r] = range.split("-").map(Number);
     const lMatch = text[l - 1] === indicator[0];
     const rMatch = text[r - 1] === indicator[0];
 
-    q2Total += lMatch && !rMatch || !lMatch && rMatch ? 1 : 0;
+    q2Total += (lMatch && !rMatch) || (!lMatch && rMatch) ? 1 : 0;
   });
   console.log(q2Total);
 }
