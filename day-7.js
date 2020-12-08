@@ -1,7 +1,5 @@
-const readline = require("readline");
-const rl = readline.createInterface({
-  input: process.stdin,
-});
+const readCases = require('./read-cases');
+readCases().then(solve);
 
 function joinWords(parts, start, end) {
   return parts.slice(start, end + 1).join(' ');
@@ -59,12 +57,3 @@ function solve(caseLines) {
   // Q2
   console.log(calcContainedBags(adjMap, 'shiny gold'))
 }
-
-function run() {
-  const caseLines = [];
-  rl.on("line", (line) => caseLines.push(line)).on("close", () =>
-    solve(caseLines)
-  );
-}
-
-run();
