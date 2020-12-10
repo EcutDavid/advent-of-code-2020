@@ -1,6 +1,7 @@
 const readCases = require('./read-cases');
 readCases().then(solve);
 
+// This won't work due to the time limit.
 function walk(nums, index) {
   if (index === nums.length - 1) return 1;
   let ret = 0;
